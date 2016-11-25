@@ -24,8 +24,14 @@ Public Class Home
 
         temp = AppDomain.CurrentDomain.BaseDirectory & "\temp"
 
-        System.IO.Directory.CreateDirectory(temp)
-        System.IO.File.SetAttributes(temp, System.IO.FileAttributes.Hidden)
+        If (Not System.IO.Directory.Exists(temp)) Then
+            System.IO.Directory.CreateDirectory(temp)
+            System.IO.File.SetAttributes(temp, System.IO.FileAttributes.Hidden)
+        Else
+            System.IO.Directory.Delete(temp, True)
+            System.IO.Directory.CreateDirectory(temp)
+            System.IO.File.SetAttributes(temp, System.IO.FileAttributes.Hidden)
+        End If
 
         arguments = "/k exiv2 -ep -l" & temp & " " & RawDir
 
@@ -33,6 +39,8 @@ Public Class Home
         exiv2.WindowStyle = ProcessWindowStyle.Hidden
         exiv2.CreateNoWindow = True
         Process.Start(exiv2)
+
+        System.IO.Directory.Delete(temp, True)
 
     End Sub
 
