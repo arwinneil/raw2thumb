@@ -1,6 +1,6 @@
 ﻿Imports MaterialSkin
 
-Public Class Form1
+Public Class Home
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
@@ -9,5 +9,8 @@ Public Class Form1
         SkinManager.ColorScheme = New ColorScheme(Primary.Cyan300, Primary.Cyan400, Primary.Cyan200, Accent.LightBlue200, TextShade.WHITE)
     End Sub
 
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        GetImage.ShowDialog()
 
+    End Sub
 End Class
