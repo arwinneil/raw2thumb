@@ -1,3 +1,0 @@
-Preview 1: image/jpeg, 160x120 pixels, 19952 bytes
-Preview 2: image/tiff, 668x432 pixels, 1731456 bytes
-Preview 3: image/jpeg, 5184x3456 pixels, 1849591 bytes

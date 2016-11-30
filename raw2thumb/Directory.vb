@@ -9,14 +9,12 @@
 
         temp = AppDomain.CurrentDomain.BaseDirectory & "temp"
 
-        If (Not System.IO.Directory.Exists(temp)) Then
-            System.IO.Directory.CreateDirectory(temp)
-            System.IO.File.SetAttributes(temp, System.IO.FileAttributes.Hidden)
-        Else
+        If System.IO.Directory.Exists(temp) Then
             System.IO.Directory.Delete(temp, True)
-            System.IO.Directory.CreateDirectory(temp)
-            System.IO.File.SetAttributes(temp, System.IO.FileAttributes.Hidden)
         End If
+
+        System.IO.Directory.CreateDirectory(temp)
+        System.IO.File.SetAttributes(temp, System.IO.FileAttributes.Hidden)
 
         Return temp
 
