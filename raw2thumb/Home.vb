@@ -31,12 +31,25 @@ Public Class Home
         exiv2.CreateNoWindow = True
 
         Process.Start(exiv2)
+        MsgBox("number of files is ")
 
-        Directory.DisposeTemp(temp)
+        ' Directory.DisposeTemp(temp)
 
-        'Dim counter As System.Collections.ObjectModel.ReadOnlyCollection(Of String)
-        'counter = My.Computer.FileSystem.GetFiles(TempDir)
-        'MsgBox("number of files is " & CStr(counter.Count))
+        Dim counter As System.Collections.ObjectModel.ReadOnlyCollection(Of String)
+        counter = My.Computer.FileSystem.GetFiles(temp)
+        MsgBox("number of files is " & (counter.Count))
+
+        Dim i As Integer = counter.Count - 1
+
+        Result(counter(i))
+
+    End Sub
+
+    Sub Result(Preview As String)
+
+        OpenPanel.Visible = False
+        PictureBox2.Image = Image.FromFile(Preview)
+
     End Sub
 
     'Private Sub ScanRaw(RawDir As String)
