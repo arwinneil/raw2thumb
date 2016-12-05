@@ -2,7 +2,7 @@
 
 [raw2thumb](https://github.com/arwinneil/raw2thumb) is a tool to extract embedded thumbnails & previews from camera raw files and saves them in separate files. 
 
-Every raw file contains preview examples of the image which are embedded in the file.E xtracting the previews versus actually rendering the file is speed and resources. Extracting takes far less time and it doesn’t really need any resources.
+Every raw file contains preview examples of the image which are embedded in the file. Extracting the previews versus actually rendering the file is speed and resources. Extracting takes far less time and it doesn’t really need any resources.
 
 ## Resources
 - Form theming from [MaterialSkin for .NET WinForms](https://github.com/IgnaceMaes/MaterialSkin)
